@@ -71,8 +71,6 @@ class FilteredList extends React.Component {
                         items: []};
 
         this.state.items = this.state.initialItems;
-
-        //this.setState({items: this.state.initialItems});
     }
 
     filterList(event) {
