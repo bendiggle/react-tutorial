@@ -59,9 +59,46 @@ Lifecycle methods:
 * __shouldComponentUpdate__ – Return value determines whether component should update.
 * __componentWillUnmount__ – Invoked prior to unmounting component.
 
-Specs:
-* __getInitialState__ – Return value is the initial value for state.
-* __getDefaultProps__ – Sets fallback props values if props aren’t supplied.
-
 [There are more!!](http://facebook.github.io/react/docs/component-specs.html)
+
+### State
+Every Component has a state object and a probs object. To set the state, you should call the `setState()` method. 
+Calling setState triggers UI updates and is the __'bread and butter'__ of React’s interactivity. When setState is called,
+the render method is automatically called.
+```
+class MyComponent extends React.Component {
+    constructor() {
+        super();
+        this.state = {count: 7};
+    }
+    render() {
+        return (<h1>{this.state.count}</h1>);
+    }
+}
+render(<MyComponent/>, document.getElementById('app'));
+```
+
+### Events
+React also has a built in cross browser events system. The events are attached as properties of components and can trigger methods.
+```
+class Counter extends React.Component {
+    constructor() {
+        super();
+        this.state = {count: 0};
+    }
+    incrementCounter() {
+        this.setState({count : this.state.count + 1});
+    }
+    render() {
+        return(
+            <div>
+                <h1>Count: {this.state.count}</h1>
+                <button type="button" onClick={this.incrementCounter.bind(this)}>Increment</button>
+            </div>
+        );
+    }
+}
+render(<Counter/>, document.getElementById('app'));
+```
+
 
