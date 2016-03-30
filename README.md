@@ -27,3 +27,14 @@ JSX Element
 `
 render(<h1>Goodbye, world!</h1>, document.getElementById('app'));
 `
+
+### Creating a Simple Component
+
+`
+class Component extends React.Component {
+    render() {
+        return (<h1>This is a React Component</h1>);
+    }
+}
+render(<Component/>, document.getElementById('app'));
+`
