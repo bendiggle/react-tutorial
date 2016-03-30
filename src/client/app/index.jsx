@@ -53,7 +53,7 @@ import {render} from 'react-dom';
 //
 //    render() {
 //        return(
-//            <div>
+//            <div className="counter">
 //                <h1>Count: {this.state.count}</h1>
 //                <button type="button" onClick={this.incrementCounter.bind(this)}>Increment</button>
 //            </div>
@@ -86,7 +86,7 @@ class FilteredList extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="filter-list">
                 <input type="text" placeholder="Search" onChange={this.filterList.bind(this)}/>
                 <List items={this.state.items}/>
             </div>
